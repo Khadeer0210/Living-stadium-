@@ -1,0 +1,509 @@
+/* ============================================================
+   HOME PAGE — page.module.css
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width-lg);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* ---- HERO ---- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--gradient-hero);
+}
+
+.particleFallback {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-hero);
+}
+
+.heroGlow {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(255, 183, 3, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--space-8);
+  max-width: 800px;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-full);
+  background: rgba(239, 35, 60, 0.1);
+  border: 1px solid rgba(239, 35, 60, 0.25);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--chrome-90);
+  margin-bottom: var(--space-8);
+  letter-spacing: 0.03em;
+}
+
+.heroBadgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--crimson-live);
+  box-shadow: 0 0 8px rgba(239, 35, 60, 0.7);
+  animation: livePulse var(--pulse-duration) ease-in-out infinite;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -0.04em;
+  color: var(--chrome-100);
+  margin-bottom: var(--space-6);
+}
+
+.heroAccent {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.heroSub {
+  font-size: clamp(var(--text-base), 2vw, var(--text-lg));
+  line-height: 1.7;
+  color: var(--chrome-60);
+  margin-bottom: var(--space-10);
+}
+
+.heroCtas {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  border-radius: 1px;
+}
+
+.scrollDot {
+  width: 3px;
+  height: 12px;
+  background: var(--floodlight-gold);
+  border-radius: 2px;
+  position: absolute;
+  left: -1px;
+  animation: scrollDotMove 2s ease-in-out infinite;
+}
+
+@keyframes scrollDotMove {
+  0%, 100% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 36px; opacity: 0; }
+}
+
+/* ---- MOMENTUM TEASER ---- */
+.momentumTeaser {
+  padding: var(--space-20) 0;
+  background: var(--stadium-void);
+  position: relative;
+}
+
+.momentumCard {
+  background: linear-gradient(135deg, rgba(26, 39, 64, 0.4) 0%, rgba(20, 30, 46, 0.6) 100%);
+  border: var(--border-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+}
+
+.momentumHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--space-6) var(--space-8) var(--space-4);
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.momentumTitle {
+  font-family: var(--font-mono);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--chrome-100);
+  margin-top: var(--space-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.momentumMeta {
+  font-size: var(--text-sm);
+  color: var(--chrome-60);
+  margin-top: var(--space-1);
+}
+
+.waveformWrap {
+  position: relative;
+  height: 160px;
+  padding: 0 var(--space-4);
+}
+
+.waveformCanvas {
+  width: 100%;
+  height: 100%;
+}
+
+.waveformOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--stadium-surface) 0%, transparent 10%, transparent 90%, var(--stadium-surface) 100%);
+  pointer-events: none;
+}
+
+.momentumStats {
+  display: flex;
+  gap: var(--space-8);
+  padding: var(--space-4) var(--space-8) var(--space-6);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.momentumStat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.momentumStatValue {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--floodlight-gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.momentumStatLabel {
+  font-size: var(--text-xs);
+  color: var(--chrome-40);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ---- FIVE SYSTEMS ---- */
+.systemsSection {
+  padding: var(--space-24) 0;
+  background: var(--stadium-void);
+  position: relative;
+}
+
+.sectionHeader {
+  margin-bottom: var(--space-12);
+}
+
+.sectionHeader .label {
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+.sectionHeader h2 {
+  margin-bottom: var(--space-4);
+}
+
+.systemsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+.systemCard {
+  position: relative;
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  border: var(--border-subtle);
+  background: var(--stadium-surface);
+  overflow: hidden;
+  transition: transform var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.systemCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-md);
+}
+
+.systemCardGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.systemIcon {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.systemName {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--chrome-100);
+  margin-bottom: var(--space-3);
+  position: relative;
+  z-index: 1;
+}
+
+.systemDesc {
+  font-size: var(--text-sm);
+  color: var(--chrome-60);
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.systemStatRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  position: relative;
+  z-index: 1;
+}
+
+.systemStatVal {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.systemStatLabel {
+  font-size: var(--text-xs);
+  color: var(--chrome-40);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---- STATS BAR ---- */
+.statsBar {
+  padding: var(--space-12) 0;
+  background: var(--stadium-deep);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.statsGrid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 120px;
+}
+
+.statValue {
+  font-family: var(--font-mono);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--chrome-100);
+  font-variant-numeric: tabular-nums;
+}
+
+.statLabel {
+  font-size: var(--text-xs);
+  color: var(--chrome-40);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+/* ---- FIXTURES ---- */
+.fixtureSection {
+  padding: var(--space-24) 0;
+  background: var(--stadium-void);
+}
+
+.fixturesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+.fixtureCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.fixtureDate {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 500;
+  color: var(--floodlight-gold);
+  line-height: 1;
+}
+
+.fixtureName {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--chrome-100);
+}
+
+.fixtureTime {
+  font-size: var(--text-sm);
+  color: var(--chrome-60);
+}
+
+.countdown {
+  display: flex;
+  gap: var(--space-4);
+  margin: var(--space-3) 0;
+}
+
+.countdownUnit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdownNum {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--chrome-100);
+  font-variant-numeric: tabular-nums;
+}
+
+.countdownLabel {
+  font-size: var(--text-xs);
+  color: var(--chrome-40);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fixtureBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.fixturePrice {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--chrome-60);
+}
+
+/* ---- FEATURES ---- */
+.featuresSection {
+  padding: var(--space-24) 0;
+  background: var(--stadium-deep);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.featureCard {
+  display: block;
+  position: relative;
+  min-height: 200px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.featureArrow {
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: opacity var(--duration-normal) var(--ease-out),
+              transform var(--duration-normal) var(--ease-out);
+}
+
+.featureCard:hover .featureArrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .momentumStats {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .momentumHeader {
+    padding: var(--space-4) var(--space-4) var(--space-3);
+  }
+
+  .momentumStats {
+    padding: var(--space-3) var(--space-4) var(--space-4);
+  }
+
+  .statsGrid {
+    justify-content: center;
+  }
+
+  .statValue {
+    font-size: var(--text-3xl);
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroContent {
+    padding: var(--space-4);
+  }
+}

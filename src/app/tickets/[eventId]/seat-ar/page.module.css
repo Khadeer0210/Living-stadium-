@@ -1,0 +1,129 @@
+.page {
+  position: fixed;
+  inset: 0;
+  background: var(--stadium-void);
+  display: flex;
+  flex-direction: column;
+}
+
+.hudTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-6);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hudTop > * { pointer-events: auto; }
+
+.hudCenter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.canvasWrap {
+  flex: 1;
+  cursor: grab;
+}
+
+.canvasWrap:active { cursor: grabbing; }
+
+.loader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  background: var(--stadium-void);
+  z-index: 5;
+  color: var(--chrome-60);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.loaderSpinner {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255,183,3,0.1);
+  border-top-color: var(--floodlight-gold);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.hudBottom {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hudCard {
+  background: rgba(10, 14, 23, 0.8);
+  backdrop-filter: blur(12px);
+  border: var(--border-subtle);
+  border-radius: var(--radius-full);
+  display: flex;
+  padding: var(--space-3) var(--space-6);
+  gap: var(--space-8);
+  pointer-events: auto;
+}
+
+.hudStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hudValue {
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--chrome-100);
+}
+
+.hudLabel {
+  font-size: 10px;
+  color: var(--chrome-40);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hint {
+  font-size: var(--text-xs);
+  color: var(--chrome-60);
+}
+
+.arLabel {
+  background: rgba(239, 35, 60, 0.15);
+  border: 1px solid rgba(239, 35, 60, 0.4);
+  color: #EF233C;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .hudCard { gap: var(--space-4); padding: var(--space-3) var(--space-4); }
+  .hudValue { font-size: var(--text-lg); }
+  .hudTop { padding: var(--space-4); flex-wrap: wrap; gap: var(--space-4); }
+  .hudCenter { position: static; transform: none; order: -1; width: 100%; text-align: center; }
+}

@@ -1,0 +1,133 @@
+.footer {
+  position: relative;
+  background: var(--stadium-deep);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(255, 183, 3, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.inner {
+  max-width: var(--max-width-lg);
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-6) var(--space-8);
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: var(--space-10);
+  margin-bottom: var(--space-12);
+}
+
+.brand {}
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.logoText {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--chrome-100);
+}
+
+.tagline {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--chrome-60);
+  max-width: 280px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.colTitle {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--chrome-40);
+  margin-bottom: var(--space-2);
+}
+
+.footerLink {
+  font-size: var(--text-sm);
+  color: var(--chrome-60);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-standard);
+  padding: var(--space-1) 0;
+}
+
+.footerLink:hover {
+  color: var(--floodlight-gold);
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.copyright {
+  font-size: var(--text-xs);
+  color: var(--chrome-40);
+}
+
+.badges {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+  color: var(--chrome-40);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .bottom {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+  .badges {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

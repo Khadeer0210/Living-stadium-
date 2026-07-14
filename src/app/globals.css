@@ -1,0 +1,769 @@
+/* ============================================================
+   SMART STADIUM — Design System
+   Midnight Stadium Palette · Apple Typography · Premium Motion
+   ============================================================ */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap');
+
+/* ============================================================
+   1. DESIGN TOKENS (CSS Custom Properties)
+   ============================================================ */
+:root {
+  /* --- Palette: Midnight Stadium --- */
+  --stadium-void:     #0A0E17;
+  --stadium-deep:     #0D1B2A;
+  --stadium-surface:  #141E2E;
+  --stadium-elevated: #1A2740;
+  --stadium-hover:    #1F2F4D;
+
+  /* --- Accent: Floodlight Gold --- */
+  --floodlight-gold:  #FFB703;
+  --floodlight-warm:  #FFD166;
+  --floodlight-glow:  rgba(255, 183, 3, 0.08);
+  --floodlight-subtle: rgba(255, 183, 3, 0.04);
+
+  /* --- Semantic Colors --- */
+  --crimson-live:     #EF233C;
+  --crimson-glow:     rgba(239, 35, 60, 0.15);
+  --turf-success:     #2A9D8F;
+  --turf-glow:        rgba(42, 157, 143, 0.12);
+  --violet-safety:    #6A4C93;
+  --violet-glow:      rgba(106, 76, 147, 0.12);
+
+  /* --- Chrome (Text/Neutral) --- */
+  --chrome-100:       #F5F5F7;
+  --chrome-90:        #E8E8ED;
+  --chrome-70:        #B0B0B8;
+  --chrome-60:        #86868B;
+  --chrome-40:        #6E6E73;
+  --chrome-30:        #424245;
+  --chrome-20:        #2D2D30;
+  --chrome-10:        #1D1D1F;
+
+  /* --- Gradients --- */
+  --gradient-hero:    linear-gradient(135deg, #0A0E17 0%, #0D1B2A 40%, #141E2E 100%);
+  --gradient-gold:    linear-gradient(135deg, #FFB703 0%, #FFD166 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(26, 39, 64, 0.6) 0%, rgba(20, 30, 46, 0.8) 100%);
+  --gradient-glow:    radial-gradient(ellipse at 50% 0%, rgba(255, 183, 3, 0.06) 0%, transparent 60%);
+  --gradient-crimson: linear-gradient(135deg, #EF233C 0%, #D90429 100%);
+
+  /* --- Typography --- */
+  --font-display:     'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-body:        -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono:        'IBM Plex Mono', 'SF Mono', ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', monospace;
+
+  /* --- Type Scale (Major Third — 1.25) --- */
+  --text-xs:          0.75rem;     /* 12px */
+  --text-sm:          0.875rem;    /* 14px */
+  --text-base:        1rem;        /* 16px */
+  --text-lg:          1.125rem;    /* 18px */
+  --text-xl:          1.25rem;     /* 20px */
+  --text-2xl:         1.5rem;      /* 24px */
+  --text-3xl:         1.875rem;    /* 30px */
+  --text-4xl:         2.25rem;     /* 36px */
+  --text-5xl:         3rem;        /* 48px */
+  --text-6xl:         3.75rem;     /* 60px */
+  --text-7xl:         4.5rem;      /* 72px */
+  --text-8xl:         6rem;        /* 96px */
+
+  /* --- Spacing Scale --- */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* --- Borders & Radii --- */
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
+  --radius-2xl: 40px;
+  --radius-full: 9999px;
+  --border-subtle: 1px solid rgba(255, 255, 255, 0.06);
+  --border-accent: 1px solid rgba(255, 183, 3, 0.2);
+
+  /* --- Shadows --- */
+  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md:   0 4px 14px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.2);
+  --shadow-lg:   0 10px 40px rgba(0, 0, 0, 0.5), 0 4px 14px rgba(0, 0, 0, 0.3);
+  --shadow-xl:   0 20px 60px rgba(0, 0, 0, 0.6), 0 10px 30px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 40px rgba(255, 183, 3, 0.15), 0 0 80px rgba(255, 183, 3, 0.05);
+  --shadow-glow-crimson: 0 0 30px rgba(239, 35, 60, 0.2), 0 0 60px rgba(239, 35, 60, 0.08);
+
+  /* --- Motion --- */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast:     150ms;
+  --duration-normal:   300ms;
+  --duration-slow:     500ms;
+  --duration-dramatic: 800ms;
+  --pulse-duration:    2.4s;
+
+  /* --- Z-Index Scale --- */
+  --z-base:       1;
+  --z-elevated:   10;
+  --z-sticky:     100;
+  --z-overlay:    500;
+  --z-modal:      1000;
+  --z-toast:      1500;
+
+  /* --- Layout --- */
+  --max-width:    1280px;
+  --max-width-lg: 1440px;
+  --nav-height:   72px;
+}
+
+/* ============================================================
+   2. RESET & BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--chrome-100);
+  background-color: var(--stadium-void);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+img, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul, ol { list-style: none; }
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+::selection {
+  background: rgba(255, 183, 3, 0.3);
+  color: var(--chrome-100);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--stadium-void);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--chrome-30);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--chrome-40);
+}
+
+/* ============================================================
+   3. TYPOGRAPHY UTILITIES
+   ============================================================ */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+.font-mono    { font-family: var(--font-mono); }
+
+.text-xs   { font-size: var(--text-xs); }
+.text-sm   { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg   { font-size: var(--text-lg); }
+.text-xl   { font-size: var(--text-xl); }
+.text-2xl  { font-size: var(--text-2xl); }
+.text-3xl  { font-size: var(--text-3xl); }
+.text-4xl  { font-size: var(--text-4xl); }
+.text-5xl  { font-size: var(--text-5xl); }
+.text-6xl  { font-size: var(--text-6xl); }
+.text-7xl  { font-size: var(--text-7xl); }
+.text-8xl  { font-size: var(--text-8xl); }
+
+.text-gold    { color: var(--floodlight-gold); }
+.text-crimson { color: var(--crimson-live); }
+.text-turf    { color: var(--turf-success); }
+.text-violet  { color: var(--violet-safety); }
+.text-muted   { color: var(--chrome-60); }
+.text-subtle  { color: var(--chrome-40); }
+
+.heading-hero {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-4xl), 6vw, var(--text-7xl));
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--chrome-100);
+}
+
+.heading-section {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--chrome-100);
+}
+
+.heading-card {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.body-large {
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--chrome-70);
+}
+
+.body-small {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--chrome-60);
+}
+
+.label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--chrome-60);
+}
+
+.mono-data {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   4. LAYOUT UTILITIES
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.container-lg {
+  max-width: var(--max-width-lg);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.section {
+  padding: var(--space-24) 0;
+  position: relative;
+}
+
+.section-tight {
+  padding: var(--space-16) 0;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+/* ============================================================
+   5. COMPONENT STYLES
+   ============================================================ */
+
+/* --- Glass Card --- */
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 39, 64, 0.5) 0%,
+    rgba(20, 30, 46, 0.7) 100%
+  );
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border: var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out),
+              border-color var(--duration-normal) var(--ease-out);
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 50%,
+    rgba(255, 183, 3, 0.05) 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Premium Button --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--gradient-gold);
+  color: var(--stadium-void);
+  box-shadow: 0 4px 20px rgba(255, 183, 3, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 183, 3, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--chrome-100);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background: var(--gradient-crimson);
+  color: var(--chrome-100);
+  box-shadow: 0 4px 20px rgba(239, 35, 60, 0.2);
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(239, 35, 60, 0.3);
+}
+
+.btn-lg {
+  font-size: var(--text-base);
+  padding: var(--space-4) var(--space-8);
+}
+
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--radius-full);
+}
+
+/* --- Pulse Badge (LIVE indicator) --- */
+.pulse-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  background: rgba(20, 30, 46, 0.9);
+  border: 1px solid rgba(239, 35, 60, 0.3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--floodlight-gold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pulse-badge__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--crimson-live);
+  box-shadow: 0 0 8px rgba(239, 35, 60, 0.6);
+}
+
+/* --- Input Field --- */
+.input-field {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: rgba(20, 30, 46, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  color: var(--chrome-100);
+  font-size: var(--text-sm);
+  transition: border-color var(--duration-normal) var(--ease-standard);
+}
+
+.input-field:focus {
+  border-color: var(--floodlight-gold);
+  box-shadow: 0 0 0 3px rgba(255, 183, 3, 0.1);
+}
+
+.input-field::placeholder {
+  color: var(--chrome-40);
+}
+
+/* --- Divider --- */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.06) 20%,
+    rgba(255, 255, 255, 0.06) 80%,
+    transparent 100%
+  );
+  margin: var(--space-12) 0;
+}
+
+/* --- Chip / Tag --- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--chrome-70);
+}
+
+.chip-gold {
+  background: var(--floodlight-glow);
+  border-color: rgba(255, 183, 3, 0.2);
+  color: var(--floodlight-gold);
+}
+
+.chip-live {
+  background: var(--crimson-glow);
+  border-color: rgba(239, 35, 60, 0.2);
+  color: var(--crimson-live);
+}
+
+/* ============================================================
+   6. ANIMATIONS
+   ============================================================ */
+
+/* Live pulse heartbeat — 2.4s as per blueprint */
+@keyframes livePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(239, 35, 60, 0.6); }
+  50% { box-shadow: 0 0 20px rgba(239, 35, 60, 0.9), 0 0 40px rgba(239, 35, 60, 0.3); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes waveformScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Motion-safe utilities */
+.animate-pulse {
+  animation: livePulse var(--pulse-duration) ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glowPulse var(--pulse-duration) ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ============================================================
+   7. RESPONSIVE BREAKPOINTS
+   ============================================================ */
+@media (max-width: 1024px) {
+  :root {
+    --nav-height: 64px;
+  }
+
+  .heading-hero {
+    font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  }
+
+  .section {
+    padding: var(--space-16) 0;
+  }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+}
+
+@media (max-width: 768px) {
+  .heading-hero {
+    font-size: clamp(var(--text-2xl), 8vw, var(--text-4xl));
+  }
+
+  .heading-section {
+    font-size: clamp(var(--text-2xl), 6vw, var(--text-3xl));
+  }
+
+  .section {
+    padding: var(--space-12) 0;
+  }
+
+  .grid-auto {
+    grid-template-columns: 1fr;
+  }
+
+  .glass-card {
+    padding: var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--space-3);
+  }
+
+  .btn-lg {
+    font-size: var(--text-sm);
+    padding: var(--space-3) var(--space-6);
+  }
+}
+
+/* ============================================================
+   8. PAGE TRANSITION BASE
+   ============================================================ */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--duration-dramatic) var(--ease-out),
+              transform var(--duration-dramatic) var(--ease-out);
+}
+
+/* ============================================================
+   9. SPECIAL EFFECTS
+   ============================================================ */
+
+/* Noise texture overlay */
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Gradient mesh background */
+.gradient-mesh {
+  position: relative;
+}
+
+.gradient-mesh::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    ellipse at 20% 50%,
+    rgba(255, 183, 3, 0.03) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    ellipse at 80% 20%,
+    rgba(42, 157, 143, 0.02) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    ellipse at 50% 80%,
+    rgba(106, 76, 147, 0.02) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ambient light ring for 3D scenes */
+.ambient-ring {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 183, 3, 0.08) 0%,
+    rgba(255, 183, 3, 0.02) 40%,
+    transparent 70%
+  );
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* Glowing border effect */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 183, 3, 0.3) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(42, 157, 143, 0.2) 100%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}

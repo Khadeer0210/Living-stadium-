@@ -1,0 +1,292 @@
+.page {
+  padding-top: calc(var(--nav-height) + var(--space-8));
+  min-height: 100vh;
+  background: var(--stadium-void);
+}
+
+/* Match Header */
+.matchHeader {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6) var(--space-6);
+  text-align: center;
+}
+
+.matchBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.matchVenue {
+  font-size: var(--text-sm);
+  color: var(--chrome-60);
+}
+
+.scoreBoard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  margin-bottom: var(--space-4);
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 120px;
+}
+
+.teamBadge {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--stadium-void);
+}
+
+.teamName {
+  font-size: var(--text-sm);
+  color: var(--chrome-60);
+}
+
+.scoreCenter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.scoreNum {
+  font-family: var(--font-mono);
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  color: var(--chrome-100);
+  font-variant-numeric: tabular-nums;
+}
+
+.scoreDash {
+  font-size: var(--text-3xl);
+  color: var(--chrome-30);
+}
+
+.matchMeta {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-6);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--chrome-40);
+}
+
+/* Tabs */
+.tabs {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  display: flex;
+  gap: var(--space-1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  margin-bottom: var(--space-6);
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--chrome-40);
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all var(--duration-fast) var(--ease-standard);
+  text-decoration: none;
+  font-family: var(--font-body);
+}
+
+.tab:hover {
+  color: var(--chrome-100);
+}
+
+.tabActive {
+  color: var(--floodlight-gold);
+  border-bottom-color: var(--floodlight-gold);
+}
+
+/* Overview Grid */
+.overviewGrid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6) var(--space-12);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.cardTitle {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--chrome-100);
+  margin-bottom: var(--space-4);
+}
+
+/* Quick Stats */
+.quickStats {}
+
+.pulseGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.pulseItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.pulseValue {
+  font-family: var(--font-mono);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.pulseLabel {
+  font-size: var(--text-xs);
+  color: var(--chrome-40);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Momentum Mini */
+.momentumMini {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.miniHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.miniWaveform {
+  margin-top: var(--space-3);
+}
+
+.miniSvg {
+  width: 100%;
+  height: 80px;
+}
+
+/* Concourse Mini */
+.concourseMini {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gateBars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.gateBar {
+  display: grid;
+  grid-template-columns: 60px 1fr 40px;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.gateLabel {
+  font-size: var(--text-xs);
+  color: var(--chrome-60);
+}
+
+.barTrack {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s var(--ease-out);
+}
+
+.gatePct {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Systems Health */
+.systemsHealth {}
+
+.healthList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.healthItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+}
+
+.healthDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.healthName {
+  font-size: var(--text-sm);
+  color: var(--chrome-70);
+  flex: 1;
+}
+
+.healthStatus {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .overviewGrid {
+    grid-template-columns: 1fr;
+  }
+  .scoreNum {
+    font-size: var(--text-4xl);
+  }
+  .scoreBoard {
+    gap: var(--space-4);
+  }
+}

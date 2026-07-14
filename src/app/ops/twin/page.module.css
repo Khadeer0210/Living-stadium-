@@ -1,0 +1,66 @@
+.page {}
+
+.header { margin-bottom: var(--space-4); }
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--chrome-100);
+}
+
+.subtitle {
+  font-size: var(--text-sm);
+  color: var(--chrome-40);
+  margin-top: var(--space-1);
+}
+
+.canvasWrap {
+  position: relative;
+  height: 500px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--stadium-surface);
+  border: var(--border-subtle);
+  margin-bottom: var(--space-4);
+}
+
+.canvasOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, transparent 50%, rgba(10, 14, 23, 0.3) 100%);
+  pointer-events: none;
+}
+
+.layerToggles {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.layerBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: var(--stadium-surface);
+  border: var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--chrome-60);
+  cursor: pointer;
+  transition: all var(--duration-fast);
+}
+
+.layerBtn:hover {
+  color: var(--chrome-100);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.layerDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--floodlight-gold);
+}

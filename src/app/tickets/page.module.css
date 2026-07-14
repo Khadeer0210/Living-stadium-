@@ -1,0 +1,29 @@
+.page { min-height: 100vh; background: var(--stadium-void); }
+.content { padding-top: calc(var(--nav-height) + var(--space-8)); max-width: var(--max-width); margin: 0 auto; padding-left: var(--space-6); padding-right: var(--space-6); padding-bottom: var(--space-16); }
+
+.header { margin-bottom: var(--space-10); }
+.title { font-family: var(--font-display); font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl)); font-weight: 300; letter-spacing: -0.03em; color: var(--chrome-100); margin-top: var(--space-2); }
+.subtitle { font-size: var(--text-lg); color: var(--chrome-60); margin-top: var(--space-3); max-width: 520px; }
+
+.section { margin-bottom: var(--space-12); }
+.sectionTitle { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 400; color: var(--chrome-100); margin-bottom: var(--space-6); }
+
+.eventsGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4); }
+.eventCard { display: flex; flex-direction: column; gap: var(--space-3); }
+.eventDate { font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 500; color: var(--floodlight-gold); line-height: 1; }
+.eventTitle { font-size: var(--text-lg); font-weight: 600; color: var(--chrome-100); }
+.eventTime { font-size: var(--text-sm); color: var(--chrome-60); }
+.eventFooter { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: var(--space-3); border-top: 1px solid rgba(255,255,255,0.04); }
+
+.seatsGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); }
+.seatCard { background: var(--stadium-surface); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius-lg); padding: var(--space-5); cursor: pointer; transition: all var(--duration-normal) var(--ease-out); }
+.seatCard:hover { border-color: rgba(255,255,255,0.1); box-shadow: var(--shadow-md); }
+.seatSelected { border-color: rgba(255,183,3,0.3); box-shadow: var(--shadow-glow); }
+.seatTop { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: var(--space-3); }
+.seatLabel { font-size: var(--text-base); font-weight: 600; color: var(--chrome-100); }
+.seatPrice { font-family: var(--font-mono); font-size: var(--text-lg); font-weight: 700; color: var(--floodlight-gold); }
+.seatMeta { display: flex; gap: var(--space-4); }
+.seatMetaItem { display: flex; flex-direction: column; }
+.seatMetaValue { font-family: var(--font-mono); font-size: var(--text-xl); font-weight: 600; color: var(--chrome-100); }
+.seatMetaLabel { font-size: var(--text-xs); color: var(--chrome-40); text-transform: uppercase; letter-spacing: 0.05em; }
+.seatActions { display: flex; gap: var(--space-2); margin-top: var(--space-4); padding-top: var(--space-3); border-top: 1px solid rgba(255,255,255,0.04); }
