@@ -16,9 +16,26 @@
 .eventFooter { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: var(--space-3); border-top: 1px solid rgba(255,255,255,0.04); }
 
 .seatsGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); }
-.seatCard { background: var(--stadium-surface); border: 1px solid rgba(255,255,255,0.06); border-radius: var(--radius-lg); padding: var(--space-5); cursor: pointer; transition: all var(--duration-normal) var(--ease-out); }
-.seatCard:hover { border-color: rgba(255,255,255,0.1); box-shadow: var(--shadow-md); }
-.seatSelected { border-color: rgba(255,183,3,0.3); box-shadow: var(--shadow-glow); }
+.seatCard {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-out);
+  box-shadow: var(--shadow-glass);
+}
+.seatCard:hover {
+  border-color: rgba(255,255,255,0.12);
+  box-shadow: var(--shadow-glass-hover);
+  transform: translateY(-2px);
+}
+.seatSelected {
+  border-color: rgba(255,183,3,0.3);
+  box-shadow: var(--shadow-glow), var(--shadow-glass);
+}
 .seatTop { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: var(--space-3); }
 .seatLabel { font-size: var(--text-base); font-weight: 600; color: var(--chrome-100); }
 .seatPrice { font-family: var(--font-mono); font-size: var(--text-lg); font-weight: 700; color: var(--floodlight-gold); }

@@ -1,7 +1,9 @@
 .footer {
   position: relative;
-  background: var(--stadium-deep);
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(13, 27, 42, 0.6);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
   overflow: hidden;
 }
 
@@ -73,12 +75,14 @@
   font-size: var(--text-sm);
   color: var(--chrome-60);
   text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-standard);
+  transition: color var(--duration-fast) var(--ease-standard),
+              text-shadow var(--duration-fast) var(--ease-standard);
   padding: var(--space-1) 0;
 }
 
 .footerLink:hover {
   color: var(--floodlight-gold);
+  text-shadow: 0 0 12px rgba(255, 183, 3, 0.15);
 }
 
 .bottom {
@@ -108,6 +112,15 @@
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--radius-sm);
   color: var(--chrome-40);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.badge:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--chrome-60);
 }
 
 @media (max-width: 900px) {
